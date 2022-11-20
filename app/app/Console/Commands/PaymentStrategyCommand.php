@@ -19,7 +19,7 @@ class PaymentStrategyCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Display the payment method strategy that is used.';
+    protected $description = '使用される決済方法と利用上限を表示します。';
 
     /**
      * Execute the console command.
@@ -30,7 +30,8 @@ class PaymentStrategyCommand extends Command
     {
         $strategyContext = new PaymentStrategyContext($this->argument('paymentMethod'));
 
-        $this->info($strategyContext->pay());
+        $this->info($strategyContext->getPaymentMethod());
+        $this->info('利用上限:' . $strategyContext->getUsageLimit());
 
         return Command::SUCCESS;
     }

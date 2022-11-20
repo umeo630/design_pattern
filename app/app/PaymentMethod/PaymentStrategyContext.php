@@ -12,12 +12,17 @@ class PaymentStrategyContext
             'credit' => new CreditCardStrategy(),
             'apple' => new ApplePayStrategy(),
             'google' => new GooglePayStrategy(),
-            default => throw new \InvalidArgumentException('You must pass in either credit, apple, or google as the payment method.'),
+            default => throw new \InvalidArgumentException('credit, apple, googleのいずれかを入力してください。'),
         };
     }
 
-    public function pay()
+    public function getPaymentMethod()
     {
-        return $this->strategy->pay();
+        return $this->strategy->getPaymentMethod();
+    }
+
+    public function getUsageLimit()
+    {
+        return $this->strategy->getUsageLimit();
     }
 }
