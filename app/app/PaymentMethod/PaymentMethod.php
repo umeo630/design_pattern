@@ -4,5 +4,7 @@ namespace App\PaymentMethod;
 
 interface PaymentMethod
 {
-    public function pay(): string;
+    public function getPaymentMethod(): string;
+
+    public function getUsageLimit(): string;
 }
