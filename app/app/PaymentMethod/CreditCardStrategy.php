@@ -2,7 +2,7 @@
 
 namespace App\PaymentMethod;
 
-class CreditCardStrategy implements PaymentMethod
+class CreditCardStrategy extends AbstractPaymentStrategy
 {
     public function getPaymentMethod(): string
     {

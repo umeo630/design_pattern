@@ -30,8 +30,11 @@ class PaymentStrategyCommand extends Command
     {
         $strategyContext = new PaymentStrategyContext($this->argument('paymentMethod'));
 
-        $this->info($strategyContext->getPaymentMethod());
-        $this->info('利用上限:' . $strategyContext->getUsageLimit());
+        $info = $strategyContext->getPaymentInfo();
+
+        foreach ($info as $key => $value) {
+            $this->info($key . ":" . $value);
+        }
 
         return Command::SUCCESS;
     }

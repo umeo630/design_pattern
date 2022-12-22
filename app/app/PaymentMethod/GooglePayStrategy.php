@@ -2,7 +2,7 @@
 
 namespace App\PaymentMethod;
 
-class GooglePayStrategy implements PaymentMethod
+class GooglePayStrategy extends AbstractPaymentStrategy
 {
     public function getPaymentMethod(): string
     {

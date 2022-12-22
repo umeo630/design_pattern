@@ -16,13 +16,8 @@ class PaymentStrategyContext
         };
     }
 
-    public function getPaymentMethod()
+    public function getPaymentInfo()
     {
-        return $this->strategy->getPaymentMethod();
-    }
-
-    public function getUsageLimit()
-    {
-        return $this->strategy->getUsageLimit();
+        return $this->strategy->getPaymentInfo();
     }
 }

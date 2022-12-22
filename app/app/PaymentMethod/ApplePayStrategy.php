@@ -2,7 +2,7 @@
 
 namespace App\PaymentMethod;
 
-class ApplePayStrategy implements PaymentMethod
+class ApplePayStrategy extends AbstractPaymentStrategy
 {
     public function getPaymentMethod(): string
     {
