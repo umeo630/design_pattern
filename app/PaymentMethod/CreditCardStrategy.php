@@ -11,6 +11,6 @@ class CreditCardStrategy extends AbstractPaymentStrategy
 
     public function getUsageLimit(): string
     {
-        return '¥1000,000';
+        return '¥1,000,000';
     }
 }
