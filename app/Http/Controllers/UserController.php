@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\WelcomeMail;
-use App\Models\Newsleter;
+use App\Models\MailingList;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -21,11 +21,9 @@ class UserController extends Controller
 
         Mail::to($request->email)->send(new WelcomeMail());
 
-        if ($request->subscribe) {
-            Newsleter::create([
-                'email' => $request->email
-            ]);
-        }
+        MailingList::create([
+            'email' => $request->email
+        ]);
 
         return response()->json(['result' => 'success']);
     }
