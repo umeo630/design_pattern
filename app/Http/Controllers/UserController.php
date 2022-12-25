@@ -2,28 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\WelcomeMail;
-use App\Models\MailingList;
+use App\Events\UserRegistered;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
-    public function register(Request $request)
+    /**
+     * ユーザー新規登録
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function register(Request $request): JsonResponse
     {
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        Mail::to($request->email)->send(new WelcomeMail());
-
-        MailingList::create([
-            'email' => $request->email
-        ]);
+        event(new UserRegistered($user));
 
         return response()->json(['result' => 'success']);
     }
