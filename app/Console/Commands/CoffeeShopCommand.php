@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use App\CoffeeShop\BlendCoffee;
 use App\CoffeeShop\Drink;
 use App\CoffeeShop\Espresso;
-use App\CoffeeShop\HouseBlend;
 use App\CoffeeShop\MochaDecorator;
 use App\CoffeeShop\SoyDecorator;
 use App\CoffeeShop\WhipDecorator;
