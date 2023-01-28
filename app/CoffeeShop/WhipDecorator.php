@@ -2,7 +2,7 @@
 
 namespace App\CoffeeShop;
 
-class WhipMochaDecorator extends ToppingDecorator
+class WhipDecorator extends ToppingDecorator
 {
     public function getDescription(): string
     {

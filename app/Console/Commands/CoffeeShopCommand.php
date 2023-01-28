@@ -7,6 +7,8 @@ use App\CoffeeShop\Drink;
 use App\CoffeeShop\Espresso;
 use App\CoffeeShop\HouseBlend;
 use App\CoffeeShop\MochaDecorator;
+use App\CoffeeShop\SoyDecorator;
+use App\CoffeeShop\WhipDecorator;
 use Illuminate\Console\Command;
 
 class CoffeeShopCommand extends Command
@@ -36,8 +38,7 @@ class CoffeeShopCommand extends Command
 
         $this->displayInfo($drink);
 
-        $drink2 = new BlendCoffee();
-        $drink2 = new MochaDecorator($drink2);
+        $drink2 = new MochaDecorator(new SoyDecorator(new WhipDecorator(new BlendCoffee())));
 
         $this->displayInfo($drink2);
 

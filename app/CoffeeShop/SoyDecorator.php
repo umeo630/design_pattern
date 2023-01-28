@@ -2,7 +2,7 @@
 
 namespace App\CoffeeShop;
 
-class SoyMochaDecorator extends ToppingDecorator
+class SoyDecorator extends ToppingDecorator
 {
     public function getDescription(): string
     {
