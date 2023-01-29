@@ -17,14 +17,14 @@ class CoffeeShopCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'coffee';
+    protected $signature = 'coffeeShop';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command CoffeeShop';
+    protected $description = 'コーヒーショップの注文内容を出力します。';
 
     /**
      * Execute the console command.
@@ -33,11 +33,13 @@ class CoffeeShopCommand extends Command
      */
     public function handle()
     {
-        $drink = new Espresso();
+        // エスプレッソにモカをトッピング
+        $drink = new MochaDecorator(new Espresso());
 
         $this->displayInfo($drink);
 
-        $drink2 = new MochaDecorator(new SoyDecorator(new WhipDecorator(new BlendCoffee())));
+        // ブレンドコーヒーにホイップ、豆乳をトッピング
+        $drink2 = new SoyDecorator(new WhipDecorator(new BlendCoffee()));
 
         $this->displayInfo($drink2);
 
