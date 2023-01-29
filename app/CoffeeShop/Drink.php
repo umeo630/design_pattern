@@ -3,7 +3,7 @@
 namespace App\CoffeeShop;
 
 /**
- * 基底となるインターフェース
+ * 基底となる飲み物インターフェース
  */
 interface Drink
 {

@@ -1,0 +1,45 @@
+@startuml CoffeeShop
+
+Interface Drink{
+    +getDescription() : string
+    +getCost() : int
+}
+
+Class BlendCoffee{
+    +getDescription() : string
+    +getCost(): int
+}
+
+Class Espresso{
+    +getDescription() : string
+    +getCost(): int
+}
+
+abstract Class ToppingDecorator{
+    #drink : Drink
+    +__construct(Drink: drink)
+}
+
+Class MochaDecorator{
+    +getDescription() : string
+    +getCost(): int
+}
+
+Class SoyDecorator{
+    +getDescription() : string
+    +getCost(): int
+}
+
+Class WhipDecorator{
+    +getDescription() : string
+    +getCost(): int
+}
+
+Drink <|.. BlendCoffee
+Drink <|.. Espresso
+Drink <|.. ToppingDecorator
+ToppingDecorator <|-- MochaDecorator
+ToppingDecorator <|-- SoyDecorator
+ToppingDecorator <|-- WhipDecorator
+
+@enduml
