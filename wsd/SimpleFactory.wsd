@@ -1,0 +1,40 @@
+@startuml SimpleFactory
+
+Class SimplePizzaFactory {
+    + cratePizza(string: $type) : Pizza
+}
+
+Class PizzaStore {
+    -factory: SimplePizzaFactory
+    +__construct(SimplePizzaFactory: $factory)
+    +orderPizza(string: $type)
+}
+
+abstract Class Pizza {
+    #name : string
+    #dough: string
+    #sauce: string
+    #toppings: array
+
+    +getName(): string
+    +prepare(): void
+    +bake(): void
+    +cut(): void
+    +box(): void
+    +describe(): void
+}
+
+Class CheesePizza extends Pizza{
+    + __construct()
+}
+
+Class ClamPizza extends Pizza {
+    + __construct()
+}
+
+Class PepperoniPizza extends Pizza {
+    + __construct()
+}
+
+Pizza <.. SimplePizzaFactory
+SimplePizzaFactory <.. PizzaStore
