@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\FactoryMethod\PizzaStore\ChicagoPizzaStore;
 use App\FactoryMethod\PizzaStore\NYPizzaStore;
 use Illuminate\Console\Command;
 
@@ -32,5 +33,10 @@ class FactoryMethodCommand extends Command
         $nyStore = new NYPizzaStore();
         $nyStore->orderPizza('チーズ');
         $nyStore->orderPizza('クラム');
+
+        // シカゴ
+        $chicagoStore = new ChicagoPizzaStore();
+        $chicagoStore->orderPizza('チーズ');
+        $chicagoStore->orderPizza('クラム');
     }
 }
