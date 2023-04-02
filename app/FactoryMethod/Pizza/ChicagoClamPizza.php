@@ -7,29 +7,29 @@ class ChicagoClamPizza extends Pizza
     /**
      * @var string
      */
-    public $name;
+    public string $name;
 
     /**
      * @var string
      */
-    public $dough;
+    public string $dough;
 
     /**
      * @var string
      */
-    public $sauce;
+    public string $sauce;
 
     /**
-     * @var []
+     * @var array
      */
-    public $toppings;
+    public array $toppings;
 
     public function __construct()
     {
         $this->name = 'クラムピザ(シカゴスタイル)';
         $this->dough = '極厚クラスと生地';
         $this->sauce = 'シカゴ用ソース';
-        $this->toppings = ['フレッシュな貝'];
+        $this->toppings = ['新鮮な貝'];
     }
 
     public function cut(): void

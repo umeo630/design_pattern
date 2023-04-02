@@ -8,6 +8,12 @@ use App\FactoryMethod\Pizza\Pizza;
 
 class NYPizzaStore extends PizzaStore
 {
+    /**
+     * ニューヨークスタイルのピザをインスタンス化
+     *
+     * @param string $type
+     * @return Pizza|null
+     */
     public function createPizza(string $type): ?Pizza
     {
         // ピザインスタンスの生成

@@ -8,6 +8,12 @@ use App\FactoryMethod\Pizza\Pizza;
 
 class ChicagoPizzaStore extends PizzaStore
 {
+    /**
+     * シカゴスタイルのピザをインスタンス化する
+     *
+     * @param string $type
+     * @return Pizza|null
+     */
     public function createPizza(string $type): ?Pizza
     {
         $pizza = null;

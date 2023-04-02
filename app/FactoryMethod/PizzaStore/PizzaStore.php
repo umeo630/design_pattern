@@ -11,7 +11,7 @@ use App\FactoryMethod\Pizza\Pizza;
 abstract class PizzaStore
 {
     /**
-     * ピザ注文メソッド
+     * ピザ注文処理
      * ピザの種類に関係せず、変化しない部分
      *
      * @param string $type
@@ -30,7 +30,7 @@ abstract class PizzaStore
     }
 
     /**
-     * ピザ作成メソッド
+     * ピザ作成
      * 具体的な処理はサブクラスごとに異なる
      *
      * @param string $type
