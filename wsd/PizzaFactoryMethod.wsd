@@ -1,0 +1,49 @@
+@startuml PizzaFactoryMethod
+
+abstract Class PizzaStore {
+    + orderPizza(string: $type) : Pizza
+    - abstract createPizza(string: $type) : Pizza
+}
+
+Class NYPizzaStore {
+    - createPizza(string: $type) : Pizza
+}
+
+Class ChicagoPizzaStore {
+    - createPizza(string: $type) : Pizza
+}
+
+abstract Class Pizza {
+    #name : string
+    #dough: string
+    #sauce: string
+    #toppings: array
+
+    +prepare(): void
+    +bake(): void
+    +cut(): void
+    +box(): void
+}
+
+Class NYCheesePizza {
+}
+
+Class ChicagoCheesePizza {
+}
+
+Class NYCheesePizza {
+}
+
+Class ChicagoCheesePizza {
+}
+
+PizzaStore <|-- NYPizzaStore
+PizzaStore <|-- ChicagoPizzaStore
+Pizza <|-- NYCheesePizza
+Pizza <|-- ChicagoCheesePizza
+Pizza <|-- NYClamPizza
+Pizza <|-- ChicagoClamPizza
+NYPizzaStore ..> Pizza : Creates
+ChicagoPizzaStore ..> Pizza : Creates
+
+@enduml
