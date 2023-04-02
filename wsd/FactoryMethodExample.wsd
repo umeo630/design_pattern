@@ -1,0 +1,26 @@
+@startuml FactoryMethodExample
+
+abstract Class Creator {
+    + factoryMethod(string: $type) : Product
+}
+
+Class ConcreteCreator {
+    + factoryMethod(string: $type) : Product
+}
+
+abstract Class Product {
+    + operation(): string
+}
+
+Class ConcreteProductA {
+}
+
+Class ConcreteProductB {
+}
+
+Creator <|-- ConcreteCreator
+Product <|-- ConcreteProductA
+Product <|-- ConcreteProductB
+ConcreteCreator -right-> Product : Creates
+
+@enduml

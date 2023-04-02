@@ -4,29 +4,29 @@ namespace App\FactoryMethod\Pizza;
 
 
 /**
- * Factoryが作っている商品
+ * ピザの抽象クラス
  */
 abstract class Pizza
 {
     /**
      * @var string
      */
-    public $name;
+    public string $name;
 
     /**
      * @var string
      */
-    public $dough;
+    public string $dough;
 
     /**
      * @var string
      */
-    public $sauce;
+    public string $sauce;
 
     /**
-     * @var []
+     * @var array
      */
-    public $toppings;
+    public array $toppings;
 
     public function prepare(): void
     {
