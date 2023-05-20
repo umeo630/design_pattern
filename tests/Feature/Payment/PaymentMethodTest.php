@@ -27,9 +27,9 @@ class PaymentStrategyTest extends TestCase
     public function test_google_pay()
     {
         $this->artisan('pay google')
-        ->expectsOutputToContain('google pay')
-        ->expectsOutputToContain('¥100,000')
-        ->assertSuccessful();
+            ->expectsOutputToContain('google pay')
+            ->expectsOutputToContain('¥100,000')
+            ->assertSuccessful();
     }
 
     /**
@@ -40,9 +40,9 @@ class PaymentStrategyTest extends TestCase
     public function test_credit_card()
     {
         $this->artisan('pay credit')
-        ->expectsOutputToContain('credit card')
-        ->expectsOutputToContain('¥1,000,000')
-        ->assertSuccessful();
+            ->expectsOutputToContain('credit card')
+            ->expectsOutputToContain('¥1,000,000')
+            ->assertSuccessful();
     }
 
     /**
